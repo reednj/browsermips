@@ -36,13 +36,14 @@ a:hover {
 	color: gray;
 	
 	padding: 16px;
-	margin-top: 32px;
 }
 
-.bm-mip-box{
-	margin-left: 16px;
-	margin-top: 16px;
-	
+.bm-body {
+	padding: 32px;
+}
+
+.bm-mip-box {
+	text-align: left;
 	padding-right: 32px;
 	border-right: 1px solid;
 	
@@ -58,4 +59,12 @@ a:hover {
 .bm-mip-box-foot {
 	font-size: 8pt;
 	text-align: right;
+}
+
+.bm-system-info {
+	padding-left: 32px;
+}
+
+.bm-indent {
+	padding-left: 12px;
 }

@@ -17,15 +17,18 @@
 
 <div class='bm-body'>
 	<div class='bm-mip-box left'>
-		<span>your browsers mip count:</span>
+		<span>your speed rating:</span>
 		<div id='mipdata' class='bm-mip-count'>...</div>
-		<div class='bm-mip-box-foot'><a href='#'>recalculate</a></div>
+		<div class='bm-mip-box-foot'><a href='javascript:calcMips();'>recalculate</a></div>
 	</div>
 	
-	<div class='left'>
-		Browser: <span id='bm-b-data-b'></span><br/>
-		Operating System: <span id='bm-b-data-os'></span><br/>
-		User Agent: <span id='bm-b-data-ua'></span>
+	<div class='bm-system-info left'>
+		<span>System Information:</span>
+		<div class='bm-indent'>
+			<div><i>Browser:</i> <span id='bm-b-data-b'></span></div>
+			<div><i>Operating System:</i> <span id='bm-b-data-os'></span></div>
+			<!--<div><i>User Agent:</i> <span id='bm-b-data-ua'></span></div>-->
+		</div>
 	</div>
 	
 	<div class='clear'></div>

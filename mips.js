@@ -3,8 +3,9 @@ function init()
 	// set the browser information
 	document.getElementById('bm-b-data-b').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version;
 	document.getElementById('bm-b-data-os').innerHTML = BrowserDetect.OS;
-	document.getElementById('bm-b-data-ua').innerHTML = navigator.userAgent;
-	
+
+	// calculate the speed, and show it to the user, use the delay to get
+	// a more consistent result
 	setTimeout("calcMips()", 500);
 }
 
