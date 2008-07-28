@@ -3,6 +3,9 @@ h1 {
 	font-weight: normal;
 }
 
+p {
+	margin-top: 4px;
+}
 a {
 	text-decoration: none;
 	color: #4bbeff;
@@ -49,7 +52,7 @@ a:hover {
 	padding-right: 32px;
 	border-right: 1px solid;
 	
-	width: 220px;
+	width: 300px;
 }
 
 .bm-mip-count {
@@ -75,7 +78,7 @@ a:hover {
 	margin-top: 4px;
 	margin-bottom: 6px;
 	
-	font-size: 9pt;
+	font-size: 10pt;
 }
 
 ol.bm-top-list {
@@ -106,7 +109,6 @@ ol.bm-top-list {
 	display: block;
 	font-size: 8pt;
 	font-weight: bold;
-	margin-bottom: 4px;
 }
 
 .bm-footer-col {
@@ -126,4 +128,10 @@ ol.bm-top-list {
 	text-align: center;
 	margin-top: 8px;
 	color: gray;
+}
+
+/* submit form classes*/
+.bm-form {
+	margin-bottom: 16px;
+	margin-top: 16px;
 }

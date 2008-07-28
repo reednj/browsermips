@@ -47,4 +47,6 @@ var BrowserMips = {
 	}
 }
 
-
+var MipsUi = {
+	
+}

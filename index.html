@@ -19,13 +19,20 @@
 	<div class='bm-mip-box left'>
 		<span>Your Speed:</span>
 		<div id='mipdata' class='bm-mip-count'>...</div>
-		<div class='bm-mip-box-foot'><a href='javascript:calcMips();'>recalculate</a> | <a href='javascript:calcMips();'>submit</a></div>
+		<div class='bm-mip-box-foot'><a href='javascript:calcMips();'> recalculate </a> | <a href='#'> submit </a></div>
+		
+		<div id='bm-sub-form' class='bm-form'>
+			<form onsubmit='return false;'>
+				name: <input type='text' size='12'/>
+				<input type='submit' value='submit'/>
+				<input type='button' value='cancel'/>
+			</form>
+		</div>
 		
 		<span>System Information:</span>
 		<div class='bm-indent'>
 			<div><i>Browser:</i> <span id='bm-b-data-b'></span></div>
 			<div><i>Operating System:</i> <span id='bm-b-data-os'></span></div>
-			<!--<div><i>User Agent:</i> <span id='bm-b-data-ua'></span></div>-->
 		</div>
 	</div>
 	
@@ -40,7 +47,7 @@
 			<div>356 - Firefox3.0.1</div>
 		</div>
 	</div>
-	
+	<!--
 	<div class='bm-recent-mips left'>
 		<span>Top Speeds:</span>		
 		<div class='bm-indent'>
@@ -54,6 +61,7 @@
 			</ol>
 		</div>
 	</div>
+-->
 	
 	<div class='clear'></div>
 	
@@ -65,35 +73,34 @@
 		<div class='bm-footer-col'>
 			<span class='bm-footer-col-head'>What is this?</span>
 		
-			Aenean quis libero. Sed suscipit. Donec pellentesque mattis orci. Class aptent taciti
+			<p>Aenean quis libero. Sed suscipit. Donec pellentesque mattis orci. Class aptent taciti
 			sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nulla venenatis
-			euismod lorem. Nam tristique lorem non pede. Duis tincidunt viverra enim. Morbi euismod
-			euismod dolor. Curabitur tempus enim. Quisque egestas diam at augue. Vestibulum ante ipsum
+			euismod lorem. Nam tristique lorem non pede. Duis tincidunt viverra enim. </p>
+			
+			<p>Morbi euismodeuismod dolor. Curabitur tempus enim. Quisque egestas diam at augue. Vestibulum ante ipsum
 			primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nullam at quam vitae 
-			dolor eleifend ultricies. Nulla facilisi. 
+			dolor eleifend ultricies. Nulla facilisi. </p>
 		</div>
 	
 		<div class='bm-footer-col'>
 			<span class='bm-footer-col-head'>What does my number mean?</span>
 		
-			Vivamus accumsan condimentum mauris. Phasellus et risus. Morbi id enim vel enim rutrum aliquet. 
+			<p>Vivamus accumsan condimentum mauris. Phasellus et risus. Morbi id enim vel enim rutrum aliquet. 
 			Ut sodales. Mauris id odio sed eros hendrerit dictum. Suspendisse ligula metus, aliquam nec, 
-			pellentesque sed, porta in, sapien. Curabitur turpis velit, vestibulum nec, aliquet ac, ornare eu, dolor.
+			pellentesque sed, porta in, sapien. Curabitur turpis velit, vestibulum nec, aliquet ac, ornare eu, dolor.</p>
 		</div>
 	
 		<div class='bm-footer-col'>
 			<span class='bm-footer-col-head'>Why should I care?</span>
 		
-			Donec pede. Aliquam non nibh et enim egestas dignissim. Aliquam sit amet pede id ligula molestie dapibus. 
-			Pellentesque nisl neque, venenatis ut, ultricies a, mattis quis, eros. Pellentesque laoreet justo et felis. 
-			Nam vel nibh. Sed varius, turpis in pulvinar mattis, justo nulla ullamcorper leo, non dapibus urna
+			<p>Donec pede. Aliquam non nibh et enim egestas dignissim. Aliquam sit amet pede id ligula molestie dapibus. </p>
+			<p>Pellentesque nisl neque, venenatis ut, ultricies a, mattis quis, eros. Pellentesque laoreet justo et felis. 
+			Nam vel nibh. Sed varius, turpis in pulvinar mattis, justo nulla ullamcorper leo, non dapibus urna</p>
 		</div>
 	
 		<div class='clear'></div>
 	</div>
 
-	
-	
 </div>
 
 <div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a></div>	
