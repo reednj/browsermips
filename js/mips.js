@@ -11,7 +11,7 @@ function init()
 
 function calcMips()
 {
-	$('mipdata').innerHTML = BrowserMips.calcuate();
+	$('bm-mip-data').innerHTML = BrowserMips.calcuate();
 	setTimeout('calcMips()', 5000);
 }
 
@@ -67,18 +67,35 @@ var MipsUi = {
 	
 	submitScore: function() {
 		this.hideSubmit();
-		MipServer.submitScore();
+		MipsUi.showLoading();
+		
+		name = $('bm-f-txt').value;
+		mips = parseInt($('bm-mip-data').innerHTML);
+		
+		MipServer.submitScore(name, mips);
 	}
 }
 
 var MipServer = {
-	submitScore: function() {
-		MipsUi.showLoading();
-		setTimeout('MipServer.submitScoreDone()', 1000);
-	},
+	ADD_MIP_URL: './api/addmip.php?',
 	
-	submitScoreDone: function() {
-		MipsUi.hideLoading();
+	submitScore: function(namedata, mipdata) {
+		
+		new Ajax.Request(
+			this.ADD_MIP_URL, {
+			method: 'get',
+			parameters: {name:namedata, mips:mipdata},
+			
+			onSuccess: function(transport, json) {
+				MipsUi.hideLoading();
+			},
+			
+			onFailure: function() {
+				MipsUi.hideLoading();
+				alert('http connection error!');
+			}
+			
+		});
 	}
 	
 }
