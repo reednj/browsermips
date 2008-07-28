@@ -1,5 +1,7 @@
 /* 
  * from http://www.quirksmode.org/js/detect.html
+ *
+ * Nathan Reed: modi
  */
 var BrowserDetect = {
 	init: function () {
@@ -8,6 +10,7 @@ var BrowserDetect = {
 			|| this.searchVersion(navigator.appVersion)
 			|| "an unknown version";
 		this.OS = this.searchString(this.dataOS) || "an unknown OS";
+		
 	},
 	searchString: function (data) {
 		for (var i=0;i<data.length;i++)	{
@@ -22,10 +25,13 @@ var BrowserDetect = {
 				return data[i].identity;
 		}
 	},
+	
 	searchVersion: function (dataString) {
 		var index = dataString.indexOf(this.versionSearchString);
 		if (index == -1) return;
-		return parseFloat(dataString.substring(index+this.versionSearchString.length+1));
+		
+		strStart = index+this.versionSearchString.length+1;
+		return dataString.substring(strStart).split(/;|\s/)[0];
 	},
 	dataBrowser: [
 		{ 	string: navigator.userAgent,
@@ -36,7 +42,8 @@ var BrowserDetect = {
 		{
 			string: navigator.vendor,
 			subString: "Apple",
-			identity: "Safari"
+			identity: "Safari",
+			versionSearch: "Version"
 		},
 		{
 			prop: window.opera,

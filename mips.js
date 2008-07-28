@@ -1,3 +1,11 @@
+function init()
+{
+	// set the browser information
+	document.getElementById('bm-b-data').innerHTML = BrowserDetect.version; //navigator.userAgent;//
+	
+	setTimeout("calcMips()", 500);
+}
+
 function calcMips()
 {
 	document.getElementById('mipdata').innerHTML = BrowserMips.calcuate();
