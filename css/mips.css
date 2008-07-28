@@ -3,7 +3,6 @@ h1 {
 	font-weight: normal;
 }
 
-
 a {
 	text-decoration: none;
 	color: #4bbeff;
@@ -29,14 +28,7 @@ a:hover {
 	color: gray;
 }
 
-.bm-footer {
-	font-size: 8pt;
-	text-align: center;
-	background-color: black;
-	color: gray;
-	
-	padding: 16px;
-}
+
 
 .bm-body {
 	padding: 32px;
@@ -67,4 +59,41 @@ a:hover {
 
 .bm-indent {
 	padding-left: 12px;
+}
+
+.bm-sig {
+	text-align: center;
+	margin-top: 8px;
+	color: gray;
+}
+
+/* footer classes */
+
+.bm-footer {
+	font-size: 8pt;
+	text-align: center;
+	background-color: black;
+	color: gray;
+	
+	padding: 16px;
+}
+
+.bm-footer-col-head {
+	display: block;
+	font-size: 8pt;
+	font-weight: bold;
+	margin-bottom: 4px;
+}
+
+.bm-footer-col {
+	width: 30%;
+	float: left;
+	text-align: left;
+	margin-right: 16px;
+}
+
+.bm-footer-row {
+	width: 700px;
+	margin: 0 auto;
+	
 }
