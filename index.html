@@ -23,12 +23,14 @@
 		<div class='bm-mip-box-foot'><a href='javascript:calcMips();'> recalculate </a> | <a href='javascript:MipsUi.showSubmit();'> submit </a></div>
 		
 		<div id='bm-sub-form' class='bm-form' style='display:none'>
-			<form onsubmit='return false;'>
-				name: <input type='text' size='12'/>
+			<form onsubmit='MipsUi.submitScore(); return false;'>
+				name: <input id='bm-f-txt' type='text' size='12'/>
 				<input type='submit' value='submit'/>
 				<input type='button' value='cancel' onclick='MipsUi.hideSubmit();'/>
 			</form>
 		</div>
+		
+		<div id='bm-f-loading' class='bm-form' style='display:none'>saving...</div>
 		
 		<span>System Information:</span>
 		<div class='bm-indent'>

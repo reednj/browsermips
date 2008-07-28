@@ -50,9 +50,35 @@ var BrowserMips = {
 var MipsUi = {
 	showSubmit: function() {
 		$('bm-sub-form').show();
+		$('bm-f-txt').focus();
 	},
 	
 	hideSubmit: function() {
 		$('bm-sub-form').hide();
+	},
+	
+	showLoading: function() {
+		$('bm-f-loading').show();
+	},
+	
+	hideLoading: function() {
+		$('bm-f-loading').hide();
+	},
+	
+	submitScore: function() {
+		this.hideSubmit();
+		MipServer.submitScore();
 	}
+}
+
+var MipServer = {
+	submitScore: function() {
+		MipsUi.showLoading();
+		setTimeout('MipServer.submitScoreDone()', 1000);
+	},
+	
+	submitScoreDone: function() {
+		MipsUi.hideLoading();
+	}
+	
 }
