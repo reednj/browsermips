@@ -7,19 +7,22 @@
  * Nathan Reed, 27/09/2007
  */
 
+include 'dbpass.php';
+
 function rybadb_conn()
 {
 
 	if($_SERVER['SERVER_NAME'] == 'www.rybazoom.com') {
 		$dbhost = 'mysql.rybazoom.com';
 		$dbname = 'linkdb';
+		$dbuser = RZ_DB_USER;
+		$dbpass = RZ_DB_PASS;
 	} else {
 		$dbhost = 'localhost';
 		$dbname = 'linkdb';
+		$dbuser = 'linkuser';
+		$dbpass = '';
 	}
-
-	$dbuser = 'linkuser';
-	$dbpass = '';
 
 	$dbconn = mysql_connect($dbhost, $dbuser, $dbpass) or die ('Error connecting to mysql');
 	mysql_select_db($dbname) or die ('Error connecting to db');
