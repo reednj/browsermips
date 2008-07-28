@@ -13,6 +13,12 @@ a:hover {
 	color: white;
 }
 
+.bm-body {
+	padding: 32px;
+}
+
+/* header classes */
+
 .bm-header {
 	color: white;
 	background-color: black;
@@ -20,6 +26,14 @@ a:hover {
 	padding-top: 16px;
 	padding-bottom: 16px;
 	padding-left: 48px;
+	
+}
+
+.bm-h-title {
+	padding-left: 56px;
+	
+	background: url(../logo.png) center no-repeat;
+	background-position: 0 72%; /* x-pos y-pos */
 }
 
 .bm-sub-header {
@@ -28,11 +42,7 @@ a:hover {
 	color: gray;
 }
 
-
-
-.bm-body {
-	padding: 32px;
-}
+/* mip count and system info classes */
 
 .bm-mip-box {
 	text-align: left;
@@ -59,12 +69,6 @@ a:hover {
 
 .bm-indent {
 	padding-left: 12px;
-}
-
-.bm-sig {
-	text-align: center;
-	margin-top: 8px;
-	color: gray;
 }
 
 /* footer classes */
@@ -96,4 +100,10 @@ a:hover {
 	width: 700px;
 	margin: 0 auto;
 	
+}
+
+.bm-sig {
+	text-align: center;
+	margin-top: 8px;
+	color: gray;
 }
