@@ -1,3 +1,20 @@
+<?php
+ /*
+  * Connect to the database and generate the page. Basically the only dynamic data, is the
+  * recent results panel.
+  */
+include './api/dbconn.php';
+
+$dbconn = rybadb_conn();
+$recentMips = getRecentMips($dbconn);
+rybadb_close($dbconn);
+
+function getRecentMips($dbconn)
+{
+	return sqlQuery($dbconn, 'select name, mips from mipdata order by time desc limit 10');
+}
+
+?>
 <html>
 <head>
 <title>BrowserMips Calcuation</title>
@@ -42,14 +59,18 @@
 	<div class='bm-top-mips left'>
 		<span>Recent Results:</span>		
 		<div class='bm-indent'>
-			<div>5436 - Firefox2.0.0.16</div>
-			<div>37 - Firefox3.0.1</div>
-			<div>9645 - Internet Explorer 7.0.1</div>
-			<div>4352 - Firefox3.0.1</div>
-			<div>10123 - Firefox3.0.1</div>
-			<div>356 - Firefox3.0.1</div>
+			<?php
+				if($recentMips != false) {
+					foreach($recentMips as $mip) {
+						$name = $mip['name'];
+						$mipval = $mip['mips'];
+						print "<div>$name - $mipval</div>";
+					}
+				}
+			?>
 		</div>
 	</div>
+	
 	<!--
 	<div class='bm-recent-mips left'>
 		<span>Top Speeds:</span>		
