@@ -11,7 +11,7 @@ rybadb_close($dbconn);
 
 function getRecentMips($dbconn)
 {
-	return sqlQuery($dbconn, 'select name, mips from mipdata order by time desc limit 10');
+	return sqlQuery($dbconn, 'select name, platform, browser, mips from mipdata order by time desc limit 9');
 }
 
 ?>
@@ -41,7 +41,7 @@ function getRecentMips($dbconn)
 		
 		<div id='bm-sub-form' class='bm-form' style='display:none'>
 			<form onsubmit='MipsUi.submitScore(); return false;'>
-				name: <input id='bm-f-txt' type='text' size='12'/>
+				name: <input id='bm-f-txt' type='text' size='12' value='anonymous'/>
 				<input type='submit' value='submit'/>
 				<input type='button' value='cancel' onclick='MipsUi.hideSubmit();'/>
 			</form>
@@ -58,13 +58,15 @@ function getRecentMips($dbconn)
 	
 	<div class='bm-top-mips left'>
 		<span>Recent Results:</span>		
-		<div class='bm-indent'>
+		<div id='bm-mip-r' class='bm-indent'>
 			<?php
 				if($recentMips != false) {
 					foreach($recentMips as $mip) {
 						$name = $mip['name'];
 						$mipval = $mip['mips'];
-						print "<div>$name - $mipval</div>";
+						$platform = $mip['platform'];
+						$browser = $mip['browser'];
+						print "<div>$mipval - $name ($browser, $platform)</div>";
 					}
 				}
 			?>

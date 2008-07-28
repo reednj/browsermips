@@ -48,9 +48,14 @@ var BrowserMips = {
 }
 
 var MipsUi = {
+	insertMip: function(str) {
+		$('bm-mip-r').innerHTML = ('<div>'+str+'</div>' + $('bm-mip-r').innerHTML);
+	},
+	
 	showSubmit: function() {
 		$('bm-sub-form').show();
 		$('bm-f-txt').focus();
+		$('bm-f-txt').select();
 	},
 	
 	hideSubmit: function() {
@@ -71,23 +76,26 @@ var MipsUi = {
 		
 		name = $('bm-f-txt').value;
 		mips = parseInt($('bm-mip-data').innerHTML);
+		os = BrowserDetect.OS;
+		browser = BrowserDetect.browser + ' ' + BrowserDetect.version;
 		
-		MipServer.submitScore(name, mips);
+		MipServer.submitScore(name, mips, os, browser);
 	}
 }
 
 var MipServer = {
 	ADD_MIP_URL: './api/addmip.php?',
 	
-	submitScore: function(namedata, mipdata) {
+	submitScore: function(namedata, mipdata, platformdata, browserdata) {
 		
 		new Ajax.Request(
 			this.ADD_MIP_URL, {
 			method: 'get',
-			parameters: {name:namedata, mips:mipdata},
+			parameters: {name:namedata, mips:mipdata, platform:platformdata, browser:browserdata},
 			
 			onSuccess: function(transport, json) {
 				MipsUi.hideLoading();
+				MipsUi.insertMip(mipdata+' - '+namedata+' ('+browserdata+', '+platformdata+')');
 			},
 			
 			onFailure: function() {
