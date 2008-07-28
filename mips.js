@@ -1,7 +1,9 @@
 function init()
 {
 	// set the browser information
-	document.getElementById('bm-b-data').innerHTML = BrowserDetect.version; //navigator.userAgent;//
+	document.getElementById('bm-b-data-b').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version;
+	document.getElementById('bm-b-data-os').innerHTML = BrowserDetect.OS;
+	document.getElementById('bm-b-data-ua').innerHTML = navigator.userAgent;
 	
 	setTimeout("calcMips()", 500);
 }

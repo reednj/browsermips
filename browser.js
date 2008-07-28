@@ -11,6 +11,10 @@ var BrowserDetect = {
 			|| "an unknown version";
 		this.OS = this.searchString(this.dataOS) || "an unknown OS";
 		
+		if(this.browser == 'Firefox') {
+			this.OS = navigator.oscpu;
+		}	
+		
 	},
 	searchString: function (data) {
 		for (var i=0;i<data.length;i++)	{
@@ -77,7 +81,7 @@ var BrowserDetect = {
 		{
 			string: navigator.userAgent,
 			subString: "MSIE",
-			identity: "Explorer",
+			identity: "Internet Explorer",
 			versionSearch: "MSIE"
 		},
 		{
