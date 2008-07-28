@@ -6,15 +6,19 @@
 <link rel="stylesheet" type="text/css" href="./mips.css"/>
 </head>
 
-<body onload='calcMips();'>
+<body onload='setTimeout("calcMips()", 500);'>
 
 <div class='bm-header'>
 	<h1>browserMips</h1>
-	<span class='bm-sub-header'>Nathan Reed (c) 2008 | nathan@servralert.com</span>	
+	<span class='bm-sub-header'>Nathan Reed (c) 2008 | nathan@servralert.com | <a href='http://www.servralert.com'>servralert.com</a></span>	
 </div>
 
 <div class='bm-body'>
-	<div id='mipdata' class='bm-mip-count'>calculating...</div>
+	<div class='bm-mip-box'>
+		<span>your browsers mip count:</span>
+		<div id='mipdata' class='bm-mip-count'>...</div>
+		<div class='bm-mip-box-foot'><a href='#'>recalculate</a></div>
+	</div>
 </div>
 
 <div class='bm-footer'></div>

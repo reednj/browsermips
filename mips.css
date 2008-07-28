@@ -1,3 +1,14 @@
+
+a {
+	text-decoration: none;
+	color: #4bbeff;
+}
+
+a:hover {
+	background-color: #4bbeff;
+	color: white;
+}
+
 .bm-header {
 	background-color: black;
 	color: white;
@@ -12,8 +23,20 @@
 	padding-left: 12px;
 }
 
+.bm-mip-box{
+	margin-left: 16px;
+	margin-top: 16px;
+	
+	width: 250px;
+}
+
 .bm-mip-count {
 	text-align: center;
 	font-size: 48pt;
-	font-family: arial, verdana;
+	font-family: arial;
+}
+
+.bm-mip-box-foot {
+	font-size: 8pt;
+	text-align: right;
 }
