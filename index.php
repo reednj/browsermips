@@ -73,22 +73,6 @@ function getRecentMips($dbconn)
 		</div>
 	</div>
 	
-	<!--
-	<div class='bm-recent-mips left'>
-		<span>Top Speeds:</span>		
-		<div class='bm-indent'>
-			<ol class='bm-top-list'>
-				<li>10123 - Firefox3.0.1</li>
-				<li>9645 - Internet Explorer 7.0.1</li>
-				<li>5436 - Firefox2.0.0.16</li>
-				<li>4352 - Firefox3.0.1</li>
-				<li>356 - Firefox3.0.1</li>
-				<li>37 - Firefox3.0.1</li>
-			</ol>
-		</div>
-	</div>
--->
-	
 	<div class='clear'></div>
 	
 </div>
@@ -136,6 +120,19 @@ function getRecentMips($dbconn)
 
 <div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a></div>	
 
+<?php if($_SERVER['SERVER_NAME'] != 'localhost') { ?>
+	
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-57284-5");
+pageTracker._initData();
+pageTracker._trackPageview();
+</script>
+
+<?php } ?>
 </body>
 
 </html>
