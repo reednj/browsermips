@@ -23,6 +23,16 @@ a:hover {
 	padding-left: 12px;
 }
 
+.bm-footer {
+	font-size: 8pt;
+	text-align: center;
+	background-color: black;
+	color: gray;
+	
+	padding: 16px;
+	margin-top: 32px;
+}
+
 .bm-mip-box{
 	margin-left: 16px;
 	margin-top: 16px;
@@ -30,7 +40,7 @@ a:hover {
 	padding-right: 32px;
 	border-right: 1px solid;
 	
-	width: 250px;
+	width: 220px;
 }
 
 .bm-mip-count {

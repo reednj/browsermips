@@ -1,3 +1,9 @@
+function calcMips()
+{
+	document.getElementById('mipdata').innerHTML = BrowserMips.calcuate();
+	setTimeout('calcMips()', 5000);
+}
+
 var BrowserMips = {
 	BM_LOOP_TIME: 150,
 	BM_DATE_MOD: 17,
@@ -29,8 +35,5 @@ var BrowserMips = {
 		return Math.round(mipCount/100); 
 	}
 }
-function calcMips()
-{
-	document.getElementById('mipdata').innerHTML = BrowserMips.calcuate();
-	setTimeout('calcMips()', 5000);
-}
+
+
