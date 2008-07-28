@@ -1,8 +1,8 @@
 function init()
 {
 	// set the browser information
-	document.getElementById('bm-b-data-b').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version;
-	document.getElementById('bm-b-data-os').innerHTML = BrowserDetect.OS;
+	$('bm-b-data-b').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version;
+	$('bm-b-data-os').innerHTML = BrowserDetect.OS;
 
 	// calculate the speed, and show it to the user, use the delay to get
 	// a more consistent result
@@ -11,7 +11,7 @@ function init()
 
 function calcMips()
 {
-	document.getElementById('mipdata').innerHTML = BrowserMips.calcuate();
+	$('mipdata').innerHTML = BrowserMips.calcuate();
 	setTimeout('calcMips()', 5000);
 }
 
@@ -48,5 +48,11 @@ var BrowserMips = {
 }
 
 var MipsUi = {
+	showSubmit: function() {
+		$('bm-sub-form').show();
+	},
 	
+	hideSubmit: function() {
+		$('bm-sub-form').hide();
+	}
 }
