@@ -61,15 +61,20 @@ a:hover {
 .bm-mip-box-foot {
 	font-size: 8pt;
 	text-align: right;
+	margin-bottom: 6px;
 }
 
-.bm-system-info {
+.bm-recent-mips {
 	padding-left: 32px;
 	padding-right: 32px;
+	border-left: 1px solid;
 }
 
 .bm-indent {
 	margin-left: 12px;
+	margin-top: 4px;
+	margin-bottom: 6px;
+	
 	font-size: 9pt;
 }
 
@@ -83,7 +88,7 @@ ol.bm-top-list {
 .bm-top-mips {
 	padding-left: 32px;
 	padding-right: 32px;
-	border-left: 1px solid;
+
 }
 
 /* footer classes */
