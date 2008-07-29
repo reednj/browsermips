@@ -97,7 +97,7 @@ function getRecentMips($dbconn)
 		
 			<p>How fast your browser can execute javascript. Sort of.</p>
 			<p>
-			The number represents how many times your browser can execute a loop in 150ms. The rating will
+			The number represents how many times your browser can execute an sha1 hash in 150ms. The rating will
 			change dramatically depending on your browser, the load on your system and other random things, 
 			but generally a higher number indicates a faster computer.
 			</p>
