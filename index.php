@@ -86,28 +86,16 @@ function getRecentMips($dbconn)
 			<span class='bm-footer-col-head'>What is this?</span>
 		
 			<p>
-			A completely unscientific way of measuring the speed your browser executes javascript. It is 
-			based on the linux concept of BogoMips, and the idea of implementing it in a browser comes
-			from <a href='http://www.pothoven.net/bogoMips.html'>here</a>
+			A completely unscientific way of working out the speed of your browser. We measure how many times your browser
+			can do a particular calculation in a second. Higher numbers mean a faster browser.
 			</p>
 		
-		</div>
-	
-		<div class='bm-footer-col'>
-			<span class='bm-footer-col-head'>What does my number mean?</span>
-		
-			<p>How fast your browser can execute javascript. Sort of.</p>
-			<p>
-			The number represents how many times your browser can execute an sha1 hash in 150ms. The rating will
-			change dramatically depending on your browser, the load on your system and other random things, 
-			but generally a higher number indicates a faster computer.
-			</p>
 		</div>
 	
 		<div class='bm-footer-col'>
 			<span class='bm-footer-col-head'>Why should I care?</span>
 			<p>
-			If you're a web developer, then you can use this number to work out if the user can handle 
+			If you're a web developer, then you can use the rating to work out if the user can handle 
 			visual effects. This is a good thing, and if you've ever seen an iPhone try to handle a poorly written fade
 			effect, you'll know what I mean. 
 			</p>
