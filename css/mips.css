@@ -11,6 +11,10 @@ a {
 	color: #4bbeff;
 }
 
+.smalltext {
+	font-size: 10pt;
+}
+
 a:hover {
 	background-color: #4bbeff;
 	color: white;
@@ -52,13 +56,13 @@ a:hover {
 	padding-right: 32px;
 	border-right: 1px solid;
 	
-	width: 300px;
+	width: 320px;
 }
 
 .bm-mip-count {
-	text-align: center;
 	font-size: 48pt;
 	font-family: arial;
+	text-align: center;
 }
 
 .bm-mip-box-foot {

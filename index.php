@@ -37,8 +37,8 @@ function getRecentMips($dbconn)
 
 <div class='bm-body'>
 	<div class='bm-mip-box left'>
-		<span>Your Speed:</span>
-		<div id='bm-mip-data' class='bm-mip-count'>...</div>
+		<span>Your Speed (hashes\second):</span>
+		<div id='bm-mip-data' class='bm-mip-count'>... </div>
 		<div class='bm-mip-box-foot'><a href='javascript:calcMips();'> recalculate </a> | <a href='javascript:MipsUi.showSubmit();'> submit </a></div>
 		
 		<div id='bm-sub-form' class='bm-form' style='display:none'>
@@ -87,7 +87,8 @@ function getRecentMips($dbconn)
 		
 			<p>
 			A completely unscientific way of measuring the speed your browser executes javascript. It is 
-			based on the linux concept of BogoMips.
+			based on the linux concept of BogoMips, and the idea of implementing it in a browser comes
+			from <a href='http://www.pothoven.net/bogoMips.html'>here</a>
 			</p>
 		
 		</div>
@@ -120,7 +121,7 @@ function getRecentMips($dbconn)
 
 </div>
 
-<div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a></div>	
+<div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a> | <a href='http://github.com/reednj/browsermips/tree/master'>Github</a></div>	
 
 <?php if($_SERVER['SERVER_NAME'] != 'localhost') { ?>
 	
