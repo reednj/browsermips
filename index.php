@@ -28,7 +28,7 @@ function getRecentMips($dbconn)
 <link rel="stylesheet" type="text/css" href="./css/mips.css"/>
 </head>
 
-<body onload='init()'>
+<body onload='mip_init()'>
 
 <div class='bm-header'>
 	<h1 class='bm-h-title'>browser-mips</h1>

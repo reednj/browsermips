@@ -1,19 +1,14 @@
-function init()
+function mip_init()
 {
 	// set the browser information
 	$('bm-b-data-b').innerHTML = BrowserDetect.browser + ' ' + BrowserDetect.version;
 	$('bm-b-data-os').innerHTML = BrowserDetect.OS;
 
-	// calculate the speed, and show it to the user, use the delay to get
-	// a more consistent result
-	setTimeout("calcMips()", 500);
+	// calcuate the mip rating, and show it to the user. We wait 500ms for the intial rating
+	// to make it more accurate. Then update every 5 seconds after that.
+	setTimeout("MipsUi.setMips(BrowserMips.calcuate());", 500);
+	setInterval("MipsUi.setMips(BrowserMips.calcuate());", 5000);
 
-}
-
-function calcMips()
-{
-	$('bm-mip-data').innerHTML = BrowserMips.calcuate();
-	setTimeout('calcMips()', 5000);
 }
 
 var BrowserMips = {
@@ -51,6 +46,10 @@ var BrowserMips = {
 }
 
 var MipsUi = {
+	setMips: function(str) {
+		$('bm-mip-data').innerHTML = str;
+	},
+	
 	insertMip: function(str) {
 		$('bm-mip-r').innerHTML = ('<div>'+str+'</div>' + $('bm-mip-r').innerHTML);
 	},
