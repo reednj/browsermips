@@ -11,40 +11,7 @@ function mip_init()
 
 }
 
-var BrowserMips = {
-	BM_LOOP_TIME: 150,
-	BM_DATE_MOD: 11,
-	
-	// 'calcuate' the speed of the browser by counting the interations 
-	// of a busy wait loop over ~150ms. The numbers it returns vary massivly
-	// depending on circumstances, so its not really and sort of useful bench
-	// mark. Still interesting though
-	calcuate: function() {
-		var mipCount = 0;
-		var now = new Date();
-		var shadata = 'datastring2008'
-
-		startTime =  now.valueOf();
-		curTime =  startTime;
-
-		while((curTime-startTime) < this.BM_LOOP_TIME ) {
-			// we dont want to calcuate this everytime, it makes things tooo slow
-			// and increases the difference between browsers
-			if(mipCount%this.BM_DATE_MOD == 0) {
-				var now = new Date();
-				curTime =  now.valueOf();
-				shadata = sha1(shadata + '-' + startTime);
-			}
-			
-			mipCount++;	
-		}
-		
-		// reduce the # of significant figures, makes the numbers more
-		// friendly
-		return Math.round(mipCount); 
-	}
-}
-
+// controls the ui, handles user events...
 var MipsUi = {
 	setMips: function(str) {
 		$('bm-mip-data').innerHTML = str;
@@ -85,6 +52,7 @@ var MipsUi = {
 	}
 }
 
+// talks to the server to submit the users results etc..
 var MipServer = {
 	ADD_MIP_URL: './api/addmip.php?',
 	
@@ -108,4 +76,39 @@ var MipServer = {
 		});
 	}
 	
+}
+
+// does that actual mip rating calculation
+var BrowserMips = {
+	BM_LOOP_TIME: 150,
+	BM_DATE_MOD: 11,
+	
+	// 'calcuate' the speed of the browser by counting the interations 
+	// of a busy wait loop over ~150ms. The numbers it returns vary massivly
+	// depending on circumstances, so its not really and sort of useful bench
+	// mark. Still interesting though
+	calcuate: function() {
+		var mipCount = 0;
+		var now = new Date();
+		var shadata = 'datastring2008'
+
+		startTime =  now.valueOf();
+		curTime =  startTime;
+
+		while((curTime-startTime) < this.BM_LOOP_TIME ) {
+			// we dont want to calcuate this everytime, it makes things tooo slow
+			// and increases the difference between browsers
+			if(mipCount%this.BM_DATE_MOD == 0) {
+				var now = new Date();
+				curTime =  now.valueOf();
+				shadata = sha1(shadata + '-' + startTime);
+			}
+			
+			mipCount++;	
+		}
+		
+		// reduce the # of significant figures, makes the numbers more
+		// friendly
+		return Math.round(mipCount); 
+	}
 }
