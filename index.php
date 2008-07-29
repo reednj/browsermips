@@ -103,6 +103,15 @@ function getRecentMips($dbconn)
 			Generally if the rating is under 100, then hardcore javascript is probably not a good idea.
 			</p>
 		</div>
+		
+		<div class='bm-footer-col'>
+			<span class='bm-footer-col-head'>How is the rating calculated?</span>
+			<p>
+				By counting the number of times your browser can run a sha1 hash in 150ms, and extrapolating that
+				out to a second. The rating can change pretty dramatically depending on your system load, browser
+				brand and a bunch of other things, so its best not to take it <i>too</i> seriously.
+			</p>
+		</div>
 	
 		<div class='clear'></div>
 	</div>

@@ -109,6 +109,10 @@ ol.bm-top-list {
 	padding: 16px;
 }
 
+.bm-footer p {
+	text-indent: 8px;
+}
+
 .bm-footer-col-head {
 	display: block;
 	font-size: 8pt;
@@ -116,16 +120,15 @@ ol.bm-top-list {
 }
 
 .bm-footer-col {
-	width: 46%;
+	width: 30%;
 	float: left;
 	text-align: left;
 	margin-right: 16px;
 }
 
 .bm-footer-row {
-	width: 400px;
+	width: 700px;
 	margin: 0 auto;
-	
 }
 
 .bm-sig {
