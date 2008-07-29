@@ -7,6 +7,7 @@ function init()
 	// calculate the speed, and show it to the user, use the delay to get
 	// a more consistent result
 	setTimeout("calcMips()", 500);
+
 }
 
 function calcMips()
@@ -17,7 +18,7 @@ function calcMips()
 
 var BrowserMips = {
 	BM_LOOP_TIME: 150,
-	BM_DATE_MOD: 17,
+	BM_DATE_MOD: 11,
 	
 	// 'calcuate' the speed of the browser by counting the interations 
 	// of a busy wait loop over ~150ms. The numbers it returns vary massivly
@@ -26,6 +27,7 @@ var BrowserMips = {
 	calcuate: function() {
 		var mipCount = 0;
 		var now = new Date();
+		var shadata = 'datastring2008'
 
 		startTime =  now.valueOf();
 		curTime =  startTime;
@@ -36,14 +38,15 @@ var BrowserMips = {
 			if(mipCount%this.BM_DATE_MOD == 0) {
 				var now = new Date();
 				curTime =  now.valueOf();
+				shadata = sha1(shadata + '-' + startTime);
 			}
-
+			
 			mipCount++;	
 		}
 		
 		// reduce the # of significant figures, makes the numbers more
 		// friendly
-		return Math.round(mipCount/100); 
+		return Math.round(mipCount); 
 	}
 }
 

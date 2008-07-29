@@ -18,8 +18,10 @@ function getRecentMips($dbconn)
 <html>
 <head>
 <title>BrowserMips - how fast is your browser? </title>
-<script src='./js/prototype.js' type='text/javascript' ></script>
-<script src='./js/browser.js' type='text/javascript' ></script>
+<script src='./js/prototype.js' type='text/javascript'></script>
+<script src='./js/browser.js' type='text/javascript'></script>
+<script src='./js/sha1.js' type='text/javascript'></script>
+
 <script src='./js/mips.js' type='text/javascript' ></script>
 
 <link rel="stylesheet" type="text/css" href="./css/default.css"/>
