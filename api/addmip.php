@@ -24,6 +24,12 @@ if(isset($_REQUEST['name']) && isset($_REQUEST['mips']) && isset($_REQUEST['plat
 	$name = str_replace("\n", '', $name);
 	$name = str_replace("\r", '', $name);
 	
+	// remove angle brackets that might be used for html injection
+	$name = str_replace('<', '', $name); $name = str_replace('>', '', $name);
+	$platform = str_replace('<', '', $platform); $platform = str_replace('>', '', $platform);
+	$browser = str_replace('<', '', $browser); $browser = str_replace('>', '', $browser);
+	
+	
 
 	
 	// does this mips value look ok? then we are
