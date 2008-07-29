@@ -1,7 +1,7 @@
 /* 
  * from http://www.quirksmode.org/js/detect.html
  *
- * Nathan Reed: modi
+ * Nathan Reed: modifed to get more details... 28/07/08
  */
 var BrowserDetect = {
 	init: function () {
@@ -11,8 +11,16 @@ var BrowserDetect = {
 			|| "an unknown version";
 		this.OS = this.searchString(this.dataOS) || "an unknown OS";
 		
+		// firefox gives good oscpu info, just as good as 
+		// we can get from the ua string
 		if(this.browser == 'Firefox') {
 			this.OS = navigator.oscpu;
+			
+			if(this.OS.indexOf('Windows NT 5') != -1) {
+				this.OS = 'Windows Xp';
+			} else if(this.OS.indexOf('Windows NT 6') != -1) {
+				this.OS = 'Windows Vista';
+			}
 		}	
 		
 	},
