@@ -39,7 +39,7 @@ function getRecentMips($dbconn)
 	<div class='bm-mip-box left'>
 		<span>Your Speed (hashes\second):</span>
 		<div id='bm-mip-data' class='bm-mip-count'>... </div>
-		<div class='bm-mip-box-foot'><a href='javascript:calcMips();'> recalculate </a> | <a href='javascript:MipsUi.showSubmit();'> submit </a></div>
+		<div class='bm-mip-box-foot'><a href='javascript:MipsUi.setMips(BrowserMips.calcuate());'> recalculate </a> | <a href='javascript:MipsUi.showSubmit();'> submit </a></div>
 		
 		<div id='bm-sub-form' class='bm-form' style='display:none'>
 			<form onsubmit='MipsUi.submitScore(); return false;'>

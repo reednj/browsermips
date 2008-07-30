@@ -1,3 +1,7 @@
+/*
+ * browsermips js. handles various ui tasks, and does the work
+ * of submitting the users result to the server
+ */
 function mip_init()
 {
 	// set the browser information
