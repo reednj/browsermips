@@ -12,6 +12,9 @@ function mip_init()
 	// to make it more accurate. Then update every 5 seconds after that.
 	setTimeout("MipsUi.setMips(BrowserMips.calcuate());", 500);
 	setInterval("MipsUi.setMips(BrowserMips.calcuate());", 5000);
+	
+	// submit the score automatically after 10 seconds.
+	setTimeout("MipsUi.submitScoreAuto();", 10000);
 
 }
 
@@ -42,6 +45,18 @@ var MipsUi = {
 	hideLoading: function() {
 		$('bm-f-loading').hide();
 	},
+
+	submitScoreAuto: function() {
+		name = ' ';
+		mips = parseInt($('bm-mip-data').innerHTML);
+		os = BrowserDetect.OS;
+		browser = BrowserDetect.browser + ' ' + BrowserDetect.version;
+		
+		// set a cookie so it doesnt go auto-submit next time.
+		
+		MipServer.submitScore(name, mips, os, browser);
+	},
+
 	
 	submitScore: function() {
 		this.hideSubmit();
@@ -54,6 +69,8 @@ var MipsUi = {
 		
 		MipServer.submitScore(name, mips, os, browser);
 	}
+	
+	
 }
 
 // talks to the server to submit the users results etc..
