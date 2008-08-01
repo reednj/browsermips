@@ -20,6 +20,8 @@ function mip_init()
 
 // controls the ui, handles user events...
 var MipsUi = {
+	AUTO_COOKIE: 'bm_auto',
+
 	setMips: function(str) {
 		$('bm-mip-data').innerHTML = str;
 	},
@@ -47,14 +49,20 @@ var MipsUi = {
 	},
 
 	submitScoreAuto: function() {
-		name = ' ';
-		mips = parseInt($('bm-mip-data').innerHTML);
-		os = BrowserDetect.OS;
-		browser = BrowserDetect.browser + ' ' + BrowserDetect.version;
-		
-		// set a cookie so it doesnt go auto-submit next time.
-		
-		MipServer.submitScore(name, mips, os, browser);
+	
+		// we only want to do this if it hasnt been done before
+		if(readCookie(this.AUTO_COOKIE) == null) {
+			name = ' ';
+			mips = parseInt($('bm-mip-data').innerHTML);
+			os = BrowserDetect.OS;
+			browser = BrowserDetect.browser + ' ' + BrowserDetect.version;
+			
+			// set a cookie so it doesnt go auto-submit next time.
+			// set the exipre in one day
+			createCookie(this.AUTO_COOKIE, '1', 1);
+			
+			MipServer.submitScore(name, mips, os, browser);
+		}
 	},
 
 	
@@ -133,3 +141,29 @@ var BrowserMips = {
 		return Math.round(mipCount); 
 	}
 }
+
+function createCookie(name,value,days) {
+	if (days) {
+		var date = new Date();
+		date.setTime(date.getTime()+(days*24*60*60*1000));
+		var expires = "; expires="+date.toGMTString();
+	}
+	else var expires = "";
+	document.cookie = name+"="+value+expires+"; path=/";
+}
+
+function readCookie(name) {
+	var nameEQ = name + "=";
+	var ca = document.cookie.split(';');
+	for(var i=0;i < ca.length;i++) {
+		var c = ca[i];
+		while (c.charAt(0)==' ') c = c.substring(1,c.length);
+		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	}
+	return null;
+}
+
+function eraseCookie(name) {
+	createCookie(name,"",-1);
+}
+

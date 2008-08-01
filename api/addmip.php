@@ -57,7 +57,7 @@ function addMip($dbconn, $name, $platform, $browser, $mips)
 	
 	// use the ip the date and the users string to generate a key for that user,
 	// so they cant flood the site with results
-	$userkey = sha1($_SERVER["REMOTE_ADDR"].$_SERVER["REMOTE_PORT"].date('Y-m-d-H-M'));
+	$userkey = sha1($_SERVER["REMOTE_ADDR"].$_SERVER["HTTP_USER_AGENT"].date('Y-m-d-H-i'));
 	
 	$query = "insert mipdata (name, platform, browser, `key`, mips) values ('$name', '$platform', '$browser', '$userkey', $mips)";
 	return sqlQuery($dbconn, $query);
