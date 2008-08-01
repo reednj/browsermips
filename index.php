@@ -120,7 +120,7 @@ function getRecentMips($dbconn)
 
 <div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a> | <a href='http://github.com/reednj/browsermips/tree/master'>Github</a></div>	
 
-<?php if($_SERVER['SERVER_NAME'] != 'localhost') { ?>
+<?php if($_SERVER['SERVER_NAME'] != 'rybafile') { ?>
 	
 <script type="text/javascript">
 var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
