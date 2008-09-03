@@ -119,7 +119,7 @@ function getRecentMips($dbconn)
 
 </div>
 
-<div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a> | <a href='http://popacular.com'>popacular.com</a> | <a href='http://github.com/reednj/browsermips/tree/master'>Github</a></div>	
+<div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a> | <a href='http://popacular.com'>popacular.com</a></div>	
 <?php if($_SERVER['SERVER_NAME'] != 'rybafile') { ?>
 	
 <script type="text/javascript">
