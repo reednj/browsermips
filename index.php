@@ -7,11 +7,17 @@ include './api/dbconn.php';
 
 $dbconn = rybadb_conn();
 $recentMips = getRecentMips($dbconn);
+$browserAvgs = getAverges($dbconn);
 rybadb_close($dbconn);
 
 function getRecentMips($dbconn)
 {
-	return sqlQuery($dbconn, 'select name, platform, browser, mips from mipdata order by time desc limit 9');
+	return sqlQuery($dbconn, 'select name, platform, browser, mips from mipdata order by time desc limit 6');
+}
+
+function getAverges($dbconn)
+{
+	return sqlQuery($dbconn, 'select * from (select browser, count(*) as count, round(avg(mips)) as mips from mipdata group by browser order by count desc limit 5) as browsers order by mips desc');
 }
 
 ?>
@@ -23,6 +29,7 @@ function getRecentMips($dbconn)
 <script src='./js/sha1.js' type='text/javascript'></script>
 
 <script src='./js/mips.js' type='text/javascript' ></script>
+<script src="/mint/?js" type="text/javascript"></script>
 
 <link rel="stylesheet" type="text/css" href="./css/default.css"/>
 <link rel="stylesheet" type="text/css" href="./css/mips.css"/>
@@ -60,7 +67,7 @@ function getRecentMips($dbconn)
 	
 	<div class='bm-top-mips left'>
 		<span>Recent Results:</span>		
-		<div id='bm-mip-r' class='bm-indent'>
+		<dl id='bm-mip-r' class='bm-indent'>
 			<?php
 				if($recentMips != false) {
 					foreach($recentMips as $mip) {
@@ -69,11 +76,25 @@ function getRecentMips($dbconn)
 						$platform = $mip['platform'];
 						$browser = $mip['browser'];
 						
-						print "<div>$mipval - $name ($browser, $platform)</div>";
+						print "<dt>$mipval</dt><dd>$name ($browser, $platform)</dd>";
 					}
 				}
 			?>
-		</div>
+		</dl>
+		
+		<span>Browser Averages:</span>		
+		<dl id='bm-mip-avg' class='bm-indent'>
+			<?php
+				if($browserAvgs != false) {
+					foreach($browserAvgs as $mip) {
+						$browser = $mip['browser'];
+						$mips = $mip['mips'];
+						
+						print "<dt>$mips</dt><dd>$browser</dd>\n";
+					}
+				}
+			?>
+		</dl>
 	</div>
 	
 	<div class='clear'></div>
@@ -119,7 +140,8 @@ function getRecentMips($dbconn)
 
 </div>
 
-<div class='bm-sig'>Nathan Reed (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a> | <a href='http://popacular.com'>popacular.com</a></div>	
+<div class='bm-sig'><a href='http://popacular.com'>popacular</a> - the unofficial list of popular delicious bookmarks</div>
+<div class='bm-sig'><a href='http://twitter.com/reednj'>Nathan Reed</a> (c) 2008 | <a href='http://www.servralert.com'>servralert.com</a></div>	
 <?php if($_SERVER['SERVER_NAME'] != 'rybafile') { ?>
 	
 <script type="text/javascript">
