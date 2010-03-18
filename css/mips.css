@@ -98,6 +98,21 @@ ol.bm-top-list {
 
 }
 
+/* definition list data */
+
+dl {
+	
+}
+
+dt {
+	float: left;
+}
+
+dd {
+	padding-left: 16px;
+	font-style: italic;
+}
+
 /* footer classes */
 
 .bm-footer {

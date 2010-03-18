@@ -2,6 +2,7 @@
  * from http://www.quirksmode.org/js/detect.html
  *
  * Nathan Reed: modifed to get more details... 28/07/08
+ * mod to detect google chrome... 03/09/08
  */
 var BrowserDetect = {
 	init: function () {
@@ -50,6 +51,12 @@ var BrowserDetect = {
 			subString: "OmniWeb",
 			versionSearch: "OmniWeb/",
 			identity: "OmniWeb"
+		},
+		{
+			string: navigator.userAgent,
+			subString: "Chrome",
+			identity: "Google Chrome",
+			versionSearch: "Chrome"
 		},
 		{
 			string: navigator.vendor,
