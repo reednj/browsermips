@@ -17,7 +17,19 @@ function getRecentMips($dbconn)
 
 function getAverges($dbconn)
 {
-	return sqlQuery($dbconn, 'select * from (select browser, count(*) as count, round(avg(mips)) as mips from mipdata group by browser order by count desc limit 5) as browsers order by mips desc');
+	return sqlQuery($dbconn, "
+	select * from (
+		select 
+			browser, 
+			count(*) as count, 
+			round(avg(mips)) as mips 
+		from mipdata 
+		where time > now() - INTERVAL 120 DAY
+		group by browser
+		order by count desc 
+		limit 5
+	) as browsers 
+	order by mips desc");
 }
 
 ?>
