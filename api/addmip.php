@@ -32,7 +32,7 @@ if(isset($_REQUEST['name']) && isset($_REQUEST['mips']) && isset($_REQUEST['plat
 	
 	// does this mips value look ok? then we are
 	// good to go
-	if($mips%1000 != 0 && $mips < 15000) {
+	if($mips%100000 != 0) {
 		if(addMip($dbconn, $name, $platform, $browser, $mips) != false) {
 			$status = 'done';
 		} else {
